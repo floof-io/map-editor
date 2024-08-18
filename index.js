@@ -6,13 +6,31 @@ const ctx = canvas.getContext("2d");
 let selectedBrush = 0;
 
 const colors = {
+    // backgrounds
     antHell: "#8E603F",
     desert: "#E0D1AF",
     garden: "#1EA761",
     hell: "#973332",
     ocean: "#66869E",
     sewers: "#666633",
-    dirt: "#68472E"
+    dirt: "#68472E",
+
+    // features
+    spawnpoint: "#FFE763",
+
+    // tiers
+    common: "#7EEF6D",
+    uncommon: "#FFE65D",
+    rare: "#455FCF",
+    epic: "#7633CB",
+    legendary: "#C13328",
+    mythic: "#1ED2CB",
+    ultra: "#ff2b75",
+    super: "#2affa3",
+    ancient: "#ff7b29",
+    omega: "#d966e8",
+    "???": "#333333",
+    unique: "#FFFFFF"
 };
 
 const options = {};
@@ -67,7 +85,18 @@ class MapFeature {
     static TYPE_SPAWNPOINT = 0;
     static TYPE_MOB_SPAWNER = 1;
 
-    constructor(centerX, centerY, type) { }
+    static TEMPLATE_SPAWNPOINT = {
+        width: 0,
+        height: 0
+    };
+
+    constructor(centerX, centerY, type) {
+        this.centerX = centerX;
+        this.centerY = centerY;
+        this.type = type;
+
+        this.data = {};
+    }
 }
 
 class Map {
