@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Floof Map Editor</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./index.js" type="module" defer></script>
+</head>
+
+<body>
+    <div id="menu">
+        <h2>Menu</h2>
+
+        <h3>Brushes:</h3>
+
+        <div class="brush" data-value="0">
+            <h2>Open</h2>
+
+            <div class="option" data-key="brush">
+                <label for="brush">Brush Width</label>
+                <input type="range" id="brush" value="1" min="1" max="10">
+            </div>
+
+            <div class="option" data-key="color">
+                <label for="color">Color</label>
+                <select id="color">
+                    <option value="garden" selected>Garden</option>
+                    <option value="desert">Desert</option>
+                    <option value="ocean">Ocean</option>
+                    <option value="antHell">Ant Hell</option>
+                    <option value="sewers">Sewers</option>
+                    <option value="hell">Hell</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="brush" data-value="1">
+            <h2>Dirt</h2>
+
+            <div class="option" data-key="brush">
+                <label for="brush">Brush Width</label>
+                <input type="range" id="brush" value="1" min="1" max="10">
+            </div>
+        </div>
+
+        <div class="dividerLine"></div>
+
+        <h3>Action Row:</h3>
+        <div id="actionRow">
+            <button data-action="download">Download Image</button>
+            <button data-action="copy">Copy Image to Clipboard</button>
+            <button data-action="saveData">Save Map Info</button>
+            <button data-action="loadData">Load Map Info</button>
+            <button data-action="fill">Fill To Brush</button>
+        </div>
+    </div>
+    <canvas></canvas>
+</body>
+
+</html>
